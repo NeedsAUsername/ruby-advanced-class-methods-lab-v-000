@@ -67,4 +67,8 @@ class Song
       new_instance.save
   end
 
+  def destroy_all
+      self.all.clear
+  end 
+
 end
