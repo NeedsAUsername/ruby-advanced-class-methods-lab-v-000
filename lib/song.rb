@@ -50,8 +50,10 @@ class Song
       new_song = file_name.split(/[-.]/)[0..-2].compact.collect{|word| word.strip}
       new_song_name = new_song[1]
       new_song_artist = new_song[0]
-      new_instance = self.create_by_name(new_song_name)
+      new_instance = self.new
+      new_instance.name = new_song_name
       new_instance.artist_name = new_song_artist
+      new_instance
   end
 
 
