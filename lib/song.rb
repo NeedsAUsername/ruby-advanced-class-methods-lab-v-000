@@ -57,18 +57,12 @@ class Song
   end
 
   def self.create_from_filename(file_name)
-      return TypeError unless file_name.end_with?(".mp3")
-      new_song = file_name.split(/[-.]/)[0..-2].compact.collect{|word| word.strip}
-      new_song_name = new_song[1]
-      new_song_artist = new_song[0]
-      new_instance = self.new
-      new_instance.name = new_song_name
-      new_instance.artist_name = new_song_artist
+      new_instance = self.new_from_filename(file_name)
       new_instance.save
   end
 
   def destroy_all
       self.all.clear
-  end 
+  end
 
 end
