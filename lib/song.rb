@@ -47,6 +47,7 @@ class Song
 
   def self.new_from_filename(file_name)
       return TypeError unless file_name.end_with?(".mp3")
-  end 
+      
+  end
 
 end
