@@ -45,6 +45,8 @@ class Song
       @@all.sort_by{|song| song.name}
   end
 
-  
+  def self.new_from_filename(file_name)
+      return TypeError unless file_name.end_with?(".mp3")
+  end 
 
 end
