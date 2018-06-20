@@ -48,7 +48,9 @@ class Song
   def self.new_from_filename(file_name)
       return TypeError unless file_name.end_with?(".mp3")
       new_song = file_name.split(/[-.]/)[0..-2]
-      self.create_by_name(new_song)
+      new_song_name = new_song[0..-2]
+      self.create_by_name(new_song_name)
+      
   end
 
 
